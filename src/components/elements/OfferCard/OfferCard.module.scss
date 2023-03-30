@@ -1,0 +1,20 @@
+@use "../../../styles/colors";
+@use "../../../styles/mixins";
+
+.OfferCard {
+  display: flex;
+  align-items: center;
+  width: min(70%, 680px);
+  height: 360px;
+  border-radius: 30px;
+  background-color: rgba(255, 0, 0, 0.336);
+
+  &--white-text {
+    color: colors.$color-white;
+  }
+
+  .wrapper {
+    max-width: 260px;
+    margin-left: 50px;
+  }
+}

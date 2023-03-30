@@ -1,0 +1,48 @@
+@use "../../../styles/base";
+@use "../../../styles/colors";
+
+.section {
+  width: 100%;
+
+  &__preheading {
+    display: block;
+    font-size: base.$font-size-preheading;
+    font-family: base.$font-family-yellowtail;
+
+    &--default {
+      color: colors.$color-lime;
+    }
+  }
+
+  &__heading {
+    color: colors.$color-dark-blue;
+    font-family: base.$font-family-roboto;
+  }
+
+  &--herro-banner {
+    padding: 240px 0 240px 12%;
+    background-color: colors.$color-light-grey;
+    background-image: url(../../../../public/assets/HeroSection/dishes.png),
+      url("../../../../public/assets/HeroSection/background-patterns.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: right;
+    background-blend-mode: multiply;
+
+    .wrapper {
+      max-width: 480px;
+    }
+
+    .section__heading {
+      margin-top: 10px;
+      margin-bottom: 22px;
+      color: colors.$color-dark-blue;
+    }
+  }
+
+  &--offers {
+    display: flex;
+    justify-content: space-between;
+    padding: 150px 12%;
+  }
+}

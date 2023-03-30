@@ -1,0 +1,61 @@
+@use "../../../styles/mixins";
+@use "../../../styles/base";
+@use "../../../styles/colors";
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 66px;
+  padding: 0 8%;
+  margin: 70px 0;
+  color: colors.$color-dark-blue;
+  font-size: base.$font-size-text-medium;
+  font-family: base.$font-family-roboto;
+
+  &__nav-list {
+    @include mixins.reset-list;
+    @include mixins.flex-with-gap(30px);
+    font-weight: base.$font-weight-bold;
+  }
+
+  &__right-section {
+    @include mixins.flex-with-gap(18px);
+    height: 100%;
+
+    .wrapper {
+      position: relative;
+    }
+  }
+
+  &__search {
+    @include mixins.reset-input-text;
+    min-width: 300px;
+    height: 100%;
+    padding-left: 20px;
+    border-radius: 36px;
+    background-color: colors.$color-light-grey;
+  }
+
+  &__search-btn {
+    @include mixins.reset-button;
+
+    img {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+  }
+
+  &__cart-btn {
+    @include mixins.reset-button;
+    @include mixins.flex-with-gap(12px);
+    height: 66px;
+    padding: 0 23px 0 6px;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 33px;
+    font-weight: base.$font-weight-semibold;
+  }
+}

@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+@mixin reset-input-text {
+  outline: none;
+  border: none;
+}
+
 @mixin reset-button {
   padding: 0;
   border: none;
