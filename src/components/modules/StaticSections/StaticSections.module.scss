@@ -1,5 +1,6 @@
 @use "../../../styles/base";
 @use "../../../styles/colors";
+@use "../../../styles/mixins";
 
 .section {
   width: 100%;
@@ -17,6 +18,12 @@
   &__heading {
     color: colors.$color-dark-blue;
     font-family: base.$font-family-roboto;
+  }
+
+  &__text {
+    display: block;
+    font-size: base.$font-size-text-medium;
+    line-height: 1.875rem;
   }
 
   &--herro-banner {
@@ -44,5 +51,29 @@
     display: flex;
     justify-content: space-between;
     padding: 150px 12%;
+  }
+
+  &--about {
+    display: flex;
+    justify-content: flex-end;
+    padding: 130px 215px 115px 200px;
+    background-color: colors.$color-light-grey;
+    background-image: url("../../../../public/assets/AboutSection/fresh-fruits.png");
+    background-repeat: no-repeat;
+    background-position: 100px 52px;
+    background-blend-mode: multiply;
+
+    .wrapper {
+      max-width: 702px;
+
+      & > .section__heading {
+        max-width: 500px;
+        margin-top: 10px;
+      }
+
+      & > .section__text {
+        margin-top: 15px;
+      }
+    }
   }
 }

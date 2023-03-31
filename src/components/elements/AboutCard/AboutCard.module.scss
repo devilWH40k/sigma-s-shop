@@ -1,0 +1,10 @@
+.AboutCard {
+  display: grid;
+  grid-template-columns: 100px auto;
+  gap: 0 20px;
+  max-width: 564px;
+
+  &__image {
+    grid-row: 1 / span 2;
+  }
+}
