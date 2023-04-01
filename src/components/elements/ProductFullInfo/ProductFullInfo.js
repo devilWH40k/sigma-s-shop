@@ -33,7 +33,9 @@ const ProductFullInfo = function ({ product }) {
         <footer className={classes["ProdFI__add-block"]}>
           <span style={{ marginLeft: "0" }}>Quantity:</span>
           <input type="number" defaultValue={1} max={99} />
-          <Button type="dark-blue">Add To Cart</Button>
+          <Button style={{ display: "inline-flex" }} type="dark-blue" withArrow>
+            Add To Cart
+          </Button>
         </footer>
       </main>
     </div>
