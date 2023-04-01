@@ -1,14 +1,31 @@
 import Image from "next/image";
-import Link from "next/link";
 import logo from "@assets/Header/logo.png";
 import searchIcon from "@assets/Header/search-icon.svg";
 import cartIcon from "@assets/Header/cart-icon.svg";
 
 import classes from "./Header.module.scss";
+import { useEffect, useRef } from "react";
 
 const Header = function () {
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const header = headerRef.current;
+
+    const observer = new IntersectionObserver(
+      ([e]) =>
+        e.target.classList.toggle(
+          classes["box-shadow"],
+          e.intersectionRatio < 1
+        ),
+      { threshold: [1] }
+    );
+
+    observer.observe(header);
+  }, [headerRef]);
+
   return (
-    <header className={classes["Header"]}>
+    <header ref={headerRef} className={classes["Header"]}>
       <Image src={logo} alt="logo image" width={200} height={54} />
       <ul className={classes["Header__nav-list"]}>
         <li className={classes["Header__nav-item"]}>
