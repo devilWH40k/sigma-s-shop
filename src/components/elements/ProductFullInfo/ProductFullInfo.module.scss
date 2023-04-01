@@ -1,0 +1,46 @@
+@use "../../../styles/colors";
+@use "../../../styles/base";
+@use "../../../styles/mixins";
+
+.ProdFI {
+  display: flex;
+  align-items: center;
+
+  &__img {
+    width: 350px;
+    height: 350px;
+    background-color: colors.$color-light-grey;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-blend-mode: multiply;
+    border-radius: 30px;
+  }
+
+  &__main-info {
+    max-width: 658px;
+    padding-left: 80px;
+  }
+
+  &__name {
+    color: colors.$color-dark-blue;
+  }
+
+  span {
+    font-size: base.$font-size-text-medium;
+  }
+
+  &__add-block {
+    margin-top: 35px;
+
+    * {
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    input {
+      padding: 20px 20px 20px 35px;
+      width: 92px;
+      border-radius: 16px;
+    }
+  }
+}

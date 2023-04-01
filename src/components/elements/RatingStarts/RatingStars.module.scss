@@ -1,0 +1,6 @@
+@use "../../../styles/mixins";
+
+.RatingStars {
+  @include mixins.flex-with-gap(5px);
+  align-items: center;
+}

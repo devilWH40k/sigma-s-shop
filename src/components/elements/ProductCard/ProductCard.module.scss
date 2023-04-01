@@ -5,11 +5,12 @@
 .ProductCard {
   max-width: 335px;
   height: 483px;
-
   padding: 30px 0 17px;
   font-weight: base.$font-weight-semibold;
   background-color: colors.$color-light-grey;
   border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.6s;
 
   &__category {
     display: inline-block;
@@ -49,18 +50,7 @@
     border-top: 1px solid colors.$color-grey;
   }
 
-  &__pricing-block {
-    @include mixins.flex-with-gap(10px);
-    font-size: base.$font-size-text-medium;
-  }
-
-  &__full-price {
-    color: colors.$color-grey;
-    text-decoration: line-through;
-  }
-
-  &__rating {
-    @include mixins.flex-with-gap(5px);
-    align-items: center;
+  &:hover {
+    transform: scale(1.05);
   }
 }

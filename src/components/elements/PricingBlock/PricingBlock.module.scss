@@ -1,0 +1,18 @@
+@use "../../../styles/colors";
+@use "../../../styles/base";
+@use "../../../styles/mixins";
+
+.PricingBlock {
+  @include mixins.flex-with-gap(10px);
+  font-size: base.$font-size-text-medium;
+  font-weight: base.$font-weight-semibold;
+
+  &__full-price {
+    color: colors.$color-grey;
+    text-decoration: line-through;
+  }
+
+  &__price {
+    color: colors.$color-dark-blue;
+  }
+}
