@@ -15,14 +15,3 @@ export default function Home() {
     </>
   );
 }
-
-// export async function getServerSideProps() {
-//   const response = await fetch("http://localhost:3000/api/products");
-//   const { products } = await response.json();
-
-//   return {
-//     props: {
-//       products,
-//     },
-//   };
-// }
