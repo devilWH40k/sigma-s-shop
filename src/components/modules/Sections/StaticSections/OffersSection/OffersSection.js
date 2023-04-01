@@ -1,4 +1,4 @@
-import classes from "../StaticSections.module.scss";
+import classes from "../../Sections.module.scss";
 import OfferCard from "@/components/elements/OfferCard/OfferCard";
 import cardBg1 from "@assets/OffersSection/offer-card-bg1.png";
 import cardBg2 from "@assets/OffersSection/offer-card-bg2.png";

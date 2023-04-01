@@ -1,4 +1,4 @@
-import classes from "../StaticSections.module.scss";
+import classes from "../../Sections.module.scss";
 import Button from "@/components/elements/Button/Button";
 
 const HeroSection = function () {

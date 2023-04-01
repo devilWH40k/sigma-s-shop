@@ -1,0 +1,66 @@
+@use "../../../styles/colors";
+@use "../../../styles/base";
+@use "../../../styles/mixins";
+
+.ProductCard {
+  max-width: 335px;
+  height: 483px;
+
+  padding: 30px 0 17px;
+  font-weight: base.$font-weight-semibold;
+  background-color: colors.$color-light-grey;
+  border-radius: 30px;
+
+  &__category {
+    display: inline-block;
+    margin-left: 30px;
+    padding: 6px 12px;
+    font-size: 0.9375rem;
+    color: colors.$color-white;
+    background-color: colors.$color-dark-blue;
+    border-radius: 8px;
+  }
+
+  &__img {
+    width: 335px;
+    height: 324px;
+    margin-top: 13px;
+    background-color: colors.$color-light-grey;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    background-blend-mode: multiply;
+  }
+
+  &__main-info {
+    padding: 0 30px;
+    color: colors.$color-dark-blue;
+  }
+
+  &__name {
+    font-size: base.$font-size-text-big;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    padding-top: 8px;
+    border-top: 1px solid colors.$color-grey;
+  }
+
+  &__pricing-block {
+    @include mixins.flex-with-gap(10px);
+    font-size: base.$font-size-text-medium;
+  }
+
+  &__full-price {
+    color: colors.$color-grey;
+    text-decoration: line-through;
+  }
+
+  &__rating {
+    @include mixins.flex-with-gap(5px);
+    align-items: center;
+  }
+}

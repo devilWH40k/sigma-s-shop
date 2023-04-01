@@ -1,4 +1,4 @@
-import classes from "../StaticSections.module.scss";
+import classes from "../../Sections.module.scss";
 import Button from "@/components/elements/Button/Button";
 import AboutCard from "@/components/elements/AboutCard/AboutCard";
 import cardIcon1 from "@assets/AboutSection/about-card-icon1.png";
@@ -18,7 +18,7 @@ const AboutSection = function () {
         </h2>
         <span className={classes["section__text"]}>
           Simply dummy text of the printing and typesetting industry. Lorem had
-          ceased to been the industry's standard dummy text ever since the
+          ceased to been the industry&apos;s standard dummy text ever since the
           1500s, when an unknown printer took a galley.
         </span>
         <AboutCard style={{ marginTop: "45px" }} image={cardIcon1}>
