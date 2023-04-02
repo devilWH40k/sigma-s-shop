@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import searchIcon from "@assets/Header/search-icon.svg";
 import cartIcon from "@assets/Header/cart-icon.svg";
 
@@ -34,7 +35,7 @@ const Header = function () {
       <Logo />
       <ul className={classes["Header__nav-list"]}>
         <li className={classes["Header__nav-item"]}>
-          <a href="#">Home</a>
+          <Link href="/">Home</Link>
         </li>
         <li className={classes["Header__nav-item"]}>
           <a href="#">About</a>
@@ -59,10 +60,10 @@ const Header = function () {
             <Image src={searchIcon} alt="search icon" width={56} height={56} />
           </button>
         </div>
-        <button className={classes["Header__cart-btn"]}>
+        <Link href="/cart" className={classes["Header__cart-btn"]}>
           <Image src={cartIcon} alt="cart icon" width={56} height={56} />
           <CartSpan totalQuantity={totalQuantity} />
-        </button>
+        </Link>
       </div>
     </header>
   );

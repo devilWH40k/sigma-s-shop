@@ -1,0 +1,45 @@
+@use "../../../styles/colors";
+@use "../../../styles/mixins";
+@use "../../../styles/base";
+
+.CartProductCard {
+  display: flex;
+  justify-content: space-between;
+
+  &__main {
+    @include mixins.flex-with-gap(20px);
+    align-items: center;
+  }
+
+  &__aside {
+    display: flex;
+    align-items: center;
+  }
+
+  &__quantity-label {
+    color: colors.$color-dark-blue;
+    font-size: 2rem;
+    font-weight: base.$font-weight-bold;
+  }
+
+  &__quantity {
+    @include mixins.grid-centering;
+    width: 70px;
+    height: 60px;
+    margin-left: 15px;
+    border: 1px solid colors.$color-dark-blue;
+    border-radius: 16px;
+    background-color: colors.$color-white;
+  }
+
+  &__img {
+    width: 180px;
+    height: 175px;
+    border-radius: 30px;
+    background-color: colors.$color-light-grey;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    background-blend-mode: multiply;
+  }
+}

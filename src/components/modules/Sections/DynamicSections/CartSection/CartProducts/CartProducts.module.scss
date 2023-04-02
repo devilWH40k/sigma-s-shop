@@ -1,0 +1,11 @@
+.CartProducts {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+
+  &__cart-pricing {
+    width: fit-content;
+    align-self: flex-end;
+    margin-right: 5.5%;
+  }
+}

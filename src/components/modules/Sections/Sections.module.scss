@@ -67,4 +67,10 @@
     align-items: center;
     padding: 200px min(10%, 260px);
   }
+
+  &--cart {
+    padding: 100px 10%;
+    background-color: colors.$color-sandy;
+    margin: 120px 0;
+  }
 }
