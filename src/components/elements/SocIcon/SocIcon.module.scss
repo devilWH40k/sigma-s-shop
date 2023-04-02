@@ -1,0 +1,18 @@
+@use "../../../styles/mixins";
+@use "../../../styles/colors";
+
+.SocIcon {
+  @include mixins.grid-centering;
+  width: 60px;
+  height: 60px;
+  background-color: colors.$color-light-lime;
+  border: 1px solid colors.$color-light-lime;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: border 0.6s, transform 0.6s;
+
+  &:hover {
+    transform: translateY(-5px);
+    border: 1px solid colors.$color-dark-blue;
+  }
+}

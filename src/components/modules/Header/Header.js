@@ -1,5 +1,4 @@
 import Image from "next/image";
-import logo from "@assets/Header/logo.png";
 import searchIcon from "@assets/Header/search-icon.svg";
 import cartIcon from "@assets/Header/cart-icon.svg";
 
@@ -8,6 +7,7 @@ import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { getTotalProductQuantity } from "@/utils/helpers/productCartHelper";
 import CartSpan from "@/components/elements/CartSpan/CartSpan";
+import Logo from "@/components/elements/Logo/Logo";
 
 const Header = function () {
   const headerRef = useRef(null);
@@ -31,7 +31,7 @@ const Header = function () {
 
   return (
     <header ref={headerRef} className={classes["Header"]}>
-      <Image src={logo} alt="logo image" width={200} height={54} />
+      <Logo />
       <ul className={classes["Header__nav-list"]}>
         <li className={classes["Header__nav-item"]}>
           <a href="#">Home</a>

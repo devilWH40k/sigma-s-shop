@@ -1,0 +1,69 @@
+@use "../../../styles/mixins";
+@use "../../../styles/base";
+@use "../../../styles/colors";
+
+.Footer {
+  width: 100%;
+  padding-top: 50px;
+  font-size: base.$font-size-text-medium;
+  border-top: 1px solid colors.$color-grey;
+
+  &__main {
+    @include mixins.flex-with-gap(50px);
+    justify-content: center;
+  }
+
+  &__section {
+    &:first-of-type {
+      text-align: right;
+    }
+
+    &:nth-of-type(2) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 545px;
+      text-align: center;
+    }
+
+    &:last-of-type {
+      .Footer__text-block {
+        margin-top: 22px;
+      }
+    }
+  }
+
+  &__separator {
+    width: 1px;
+    height: 280px;
+    background-color: colors.$color-grey;
+  }
+
+  &__list {
+    @include mixins.reset-list;
+  }
+
+  &__list-item {
+    margin-top: 30px;
+  }
+
+  &__text-block {
+    display: block;
+
+    &--bold {
+      font-weight: base.$font-weight-bold;
+    }
+  }
+
+  &__icons {
+    @include mixins.flex-with-gap(15px);
+    margin-top: 50px;
+  }
+
+  &__bottom {
+    margin-top: 70px;
+    padding: 15px 0;
+    text-align: center;
+    border-top: 1px solid colors.$color-grey;
+  }
+}
