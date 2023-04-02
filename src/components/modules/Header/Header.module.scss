@@ -16,6 +16,7 @@
   background-color: colors.$color-white;
   font-size: base.$font-size-text-medium;
   font-family: base.$font-family-roboto;
+  z-index: 100;
 
   &__nav-list {
     @include mixins.reset-list;
