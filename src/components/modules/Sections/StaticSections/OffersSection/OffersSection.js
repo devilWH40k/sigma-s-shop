@@ -1,3 +1,4 @@
+import Heading from "@/components/elements/Heading/Heading";
 import classes from "../../Sections.module.scss";
 import OfferCard from "@/components/elements/OfferCard/OfferCard";
 import cardBg1 from "@assets/OffersSection/offer-card-bg1.png";
@@ -16,9 +17,7 @@ const OffersSection = function () {
         >
           Offer!!
         </span>
-        <h3 className={classes["section__heading"]}>
-          Get 10% off on Vegetables
-        </h3>
+        <Heading type="h3">Get 10% off on Vegetables</Heading>
       </OfferCard>
     </section>
   );

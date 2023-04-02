@@ -1,3 +1,4 @@
+import Heading from "@/components/elements/Heading/Heading";
 import classes from "../../Sections.module.scss";
 import Button from "@/components/elements/Button/Button";
 
@@ -12,9 +13,9 @@ const HeroSection = function () {
         >
           100% Natural Food
         </span>
-        <h1 className={classes["section__heading"]}>
+        <Heading style={{ marginTop: "10px", marginBottom: "22px" }} type="h1">
           Choose the best healthier way of life
-        </h1>
+        </Heading>
         <Button type="yellow" withArrow>
           Explore Now
         </Button>

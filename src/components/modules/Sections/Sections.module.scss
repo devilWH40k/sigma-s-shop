@@ -15,10 +15,6 @@
     }
   }
 
-  &__heading {
-    color: colors.$color-dark-blue;
-  }
-
   &__text {
     display: block;
     font-size: base.$font-size-text-medium;
@@ -37,12 +33,6 @@
 
     .wrapper {
       max-width: 480px;
-    }
-
-    .section__heading {
-      margin-top: 10px;
-      margin-bottom: 22px;
-      color: colors.$color-dark-blue;
     }
   }
 
@@ -65,11 +55,6 @@
     .wrapper {
       max-width: 702px;
 
-      & > .section__heading {
-        max-width: 500px;
-        margin-top: 10px;
-      }
-
       & > .section__text {
         margin-top: 15px;
       }
@@ -81,10 +66,5 @@
     flex-direction: column;
     align-items: center;
     padding: 200px min(10%, 260px);
-
-    .section__heading {
-      margin-top: 10px;
-      margin-bottom: 40px;
-    }
   }
 }

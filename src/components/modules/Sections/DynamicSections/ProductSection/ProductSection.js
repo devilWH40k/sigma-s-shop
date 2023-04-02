@@ -1,5 +1,6 @@
 import Products from "@/components/modules/Sections/DynamicSections/ProductSection/Products/Products";
 import classes from "../../Sections.module.scss";
+import Heading from "@/components/elements/Heading/Heading";
 
 const ProductSection = function () {
   return (
@@ -9,7 +10,9 @@ const ProductSection = function () {
       >
         Categories
       </span>
-      <h2 className={classes["section__heading"]}>Our Products</h2>
+      <Heading type="h2" style={{ marginTop: "10px", marginBottom: "40px" }}>
+        Our Products
+      </Heading>
       <Products />
     </section>
   );
