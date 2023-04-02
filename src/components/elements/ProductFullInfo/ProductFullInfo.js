@@ -4,12 +4,24 @@ import RatingStars from "../RatingStarts/RatingStarts";
 import classes from "./ProductFullInfo.module.scss";
 import getConfig from "next/config";
 
-const ProductFullInfo = function ({ product }) {
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/store/slices/cartSlice";
+import { useRef } from "react";
+
+const ProductFullInfo = function ({ product, closeHandler }) {
+  const quantityRef = useRef(null);
+  const dispatch = useDispatch();
+
   if (!product) return null;
 
   const { name, category, price, discount, rating, image } = product;
   const { publicRuntimeConfig } = getConfig();
   const productImageURL = `url("${publicRuntimeConfig.assetsFolder}/Products/${image}")`;
+
+  const addToCartHandler = function () {
+    const quantity = quantityRef.current.valueAsNumber;
+    dispatch(addToCart({ ...product, quantity }));
+  };
 
   return (
     <div className={classes["ProdFI"]}>
@@ -27,13 +39,21 @@ const ProductFullInfo = function ({ product }) {
         />
         <span style={{ display: "block", marginTop: "25px" }}>
           Simply dummy text of the printing and typesetting industry. Lorem had
-          ceased to been the industry's standard dummy text ever since the
+          ceased to been the industry&apos;s standard dummy text ever since the
           1500s, when an unknown printer took a galley.
         </span>
         <footer className={classes["ProdFI__add-block"]}>
           <span style={{ marginLeft: "0" }}>Quantity:</span>
-          <input type="number" defaultValue={1} max={99} />
-          <Button style={{ display: "inline-flex" }} type="dark-blue" withArrow>
+          <input ref={quantityRef} type="number" defaultValue={1} max={99} />
+          <Button
+            onClick={() => {
+              addToCartHandler();
+              closeHandler();
+            }}
+            style={{ display: "inline-flex" }}
+            type="dark-blue"
+            withArrow
+          >
             Add To Cart
           </Button>
         </footer>

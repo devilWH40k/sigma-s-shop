@@ -5,9 +5,14 @@ import cartIcon from "@assets/Header/cart-icon.svg";
 
 import classes from "./Header.module.scss";
 import { useEffect, useRef } from "react";
+import { useSelector } from "react-redux";
+import { getTotalProductQuantity } from "@/utils/helpers/productCartHelper";
+import CartSpan from "@/components/elements/CartSpan/CartSpan";
 
 const Header = function () {
   const headerRef = useRef(null);
+  const cartList = useSelector((state) => state.cart.cartList);
+  const totalQuantity = getTotalProductQuantity(cartList);
 
   useEffect(() => {
     const header = headerRef.current;
@@ -56,7 +61,7 @@ const Header = function () {
         </div>
         <button className={classes["Header__cart-btn"]}>
           <Image src={cartIcon} alt="cart icon" width={56} height={56} />
-          Cart(0)
+          <CartSpan totalQuantity={totalQuantity} />
         </button>
       </div>
     </header>

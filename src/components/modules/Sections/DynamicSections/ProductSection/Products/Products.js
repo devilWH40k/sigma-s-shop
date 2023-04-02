@@ -54,7 +54,10 @@ const Products = function () {
         {loadMore ? "Load More" : "Load Less"}
       </Button>
       <ModalWindow show={currProduct} closeHandler={closeModalWindowHandler}>
-        <ProductFullInfo product={currProduct} />
+        <ProductFullInfo
+          closeHandler={closeModalWindowHandler}
+          product={currProduct}
+        />
       </ModalWindow>
     </>
   );
