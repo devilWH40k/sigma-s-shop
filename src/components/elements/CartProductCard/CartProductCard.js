@@ -4,7 +4,7 @@ import PricingBlock from "../PricingBlock/PricingBlock";
 import Heading from "../Heading/Heading";
 import Button from "../Button/Button";
 
-const CartProductCard = function ({ product }) {
+const CartProductCard = function ({ product, deleteHandler }) {
   const { name, price, discount, image, quantity } = product;
   const { publicRuntimeConfig } = getConfig();
   const productImageURL = `url("${publicRuntimeConfig.assetsFolder}/Products/${image}")`;
@@ -31,6 +31,7 @@ const CartProductCard = function ({ product }) {
           <span>{quantity}</span>
         </div>
         <Button
+          onClick={deleteHandler.bind(product["_id"])}
           style={{ padding: "12px 22px", marginLeft: "50px" }}
           type="dark-blue"
         >

@@ -20,8 +20,18 @@ const cartSlice = createSlice({
         state.cartList.push(action.payload);
       }
     },
+    deleteFromCart: (state, action) => {
+      const { cartList } = state;
+      const deleteId = action.payload;
+
+      const deleteIndex = cartList.findIndex(
+        (product) => product["_id"] === deleteId
+      );
+
+      cartList.splice(deleteIndex, 1);
+    },
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, deleteFromCart } = cartSlice.actions;
 export default cartSlice.reducer;
