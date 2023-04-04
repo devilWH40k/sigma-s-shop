@@ -20,6 +20,7 @@ const ProductFullInfo = function ({ product, closeHandler }) {
 
   const addToCartHandler = function () {
     const quantity = quantityRef.current.valueAsNumber;
+    if (quantity <= 0) return;
     dispatch(addToCart({ ...product, quantity }));
   };
 
@@ -44,7 +45,13 @@ const ProductFullInfo = function ({ product, closeHandler }) {
         </span>
         <footer className={classes["ProdFI__add-block"]}>
           <span style={{ marginLeft: "0" }}>Quantity:</span>
-          <input ref={quantityRef} type="number" defaultValue={1} max={99} />
+          <input
+            ref={quantityRef}
+            type="number"
+            defaultValue={1}
+            min={1}
+            max={99}
+          />
           <Button
             onClick={() => {
               addToCartHandler();
