@@ -35,4 +35,9 @@
   &:hover &__arrow {
     transform: scale(1.3) rotate(-45deg);
   }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
 }

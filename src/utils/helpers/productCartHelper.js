@@ -23,3 +23,14 @@ export const getCartSpanStyle = function (totalQuantity) {
 
   return { color: "#51cf66" };
 };
+
+export const reformateCartList = function (cartList) {
+  return cartList.map((product) => {
+    const newCartItem = {
+      product: { ...product },
+      quantity: product.quantity,
+    };
+    delete newCartItem.product.quantity;
+    return newCartItem;
+  });
+};

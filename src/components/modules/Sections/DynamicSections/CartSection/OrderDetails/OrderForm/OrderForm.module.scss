@@ -1,0 +1,42 @@
+@use "../../../../../../../styles/colors";
+@use "../../../../../../../styles/base";
+
+.OrderForm {
+  margin-top: 80px;
+  padding: 0 10% 0;
+
+  &__main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 30px 50px;
+  }
+
+  &__input-wrapper {
+    label {
+      font-size: base.$font-size-text-medium;
+      font-weight: base.$font-weight-semibold;
+      color: colors.$color-dark-blue;
+    }
+
+    &:last-child {
+      grid-column: 1 / span 2;
+    }
+  }
+
+  &__input {
+    margin-top: 20px;
+    outline: none;
+    border: 1px solid colors.$color-lime;
+    border-radius: 16px;
+    padding: 25px 0 25px 22px;
+
+    &:active,
+    &:focus {
+      border: 1px solid #000;
+    }
+
+    &.invalid {
+      border: 1px solid #f03e3e;
+    }
+  }
+}
