@@ -7,7 +7,7 @@ import { reformateCartList } from "@/utils/helpers/productCartHelper";
 const OrderDetails = function () {
   const cartList = useSelector((state) => state.cart.cartList);
   const [showForm, setShowForm] = useState(false);
-
+  const isCartEmpty = cartList.length === 0;
   const displayOrNot =
     showForm || cartList.length === 0 ? { display: "none" } : null;
   const btnStyles = {
@@ -65,7 +65,11 @@ const OrderDetails = function () {
       >
         To order
       </Button>
-      <OrderForm show={showForm} submit={submitFormHandler} />
+      <OrderForm
+        show={showForm}
+        submit={submitFormHandler}
+        isCartEmpty={isCartEmpty}
+      />
     </>
   );
 };

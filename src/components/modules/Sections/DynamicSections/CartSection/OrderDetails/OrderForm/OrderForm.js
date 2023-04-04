@@ -1,7 +1,12 @@
+import { useEffect, useRef } from "react";
 import classes from "./OrderForm.module.scss";
 import Button from "@/components/elements/Button/Button";
 
-const OrderForm = function ({ show, submit }) {
+const OrderForm = function ({ show, submit, isCartEmpty }) {
+  const formBtnRef = useRef(null);
+
+  if (isCartEmpty && formBtnRef.current) formBtnRef.current.disabled = true;
+
   const inputHandler = function (e) {
     const input = e.target;
     if (!input.validity.valid) {
@@ -84,7 +89,11 @@ const OrderForm = function ({ show, submit }) {
           />
         </div>
       </main>
-      <Button style={{ margin: "50px auto 0" }} type="dark-blue">
+      <Button
+        ref={formBtnRef}
+        style={{ margin: "50px auto 0" }}
+        type="dark-blue"
+      >
         Confirm
       </Button>
     </form>
