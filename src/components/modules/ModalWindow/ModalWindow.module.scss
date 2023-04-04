@@ -15,16 +15,16 @@
   display: flex;
   justify-content: center;
   position: fixed;
-  top: 50%;
+  top: -300px;
   left: 0;
-  transform: translateY(-450%);
+  transform: translateY(-50%);
   width: 100%;
   padding: 70px 0;
   background-color: colors.$color-white;
-  transition: transform 0.8s;
+  transition: top 0.8s;
   z-index: 1500;
 
   &.active {
-    transform: translateY(-50%);
+    top: 50%;
   }
 }

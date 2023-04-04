@@ -9,13 +9,14 @@ const Products = function () {
   const [loadMore, setLoadMore] = useState(true);
   const [products, setProducts] = useState([]);
   const [currProduct, setCurrProduct] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   const loadMoreHandler = function () {
     setLoadMore((prevloadMore) => !prevloadMore);
   };
 
   const closeModalWindowHandler = function () {
-    setCurrProduct(null);
+    setShowModal(false);
   };
 
   const cardClickHandler = function () {
@@ -24,6 +25,7 @@ const Products = function () {
       (product) => product["_id"] === clickedProductId
     );
     setCurrProduct(clickedProduct);
+    setShowModal(true);
   };
 
   useEffect(() => {
@@ -53,7 +55,7 @@ const Products = function () {
       >
         {loadMore ? "Load More" : "Load Less"}
       </Button>
-      <ModalWindow show={currProduct} closeHandler={closeModalWindowHandler}>
+      <ModalWindow show={showModal} closeHandler={closeModalWindowHandler}>
         <ProductFullInfo
           closeHandler={closeModalWindowHandler}
           product={currProduct}
