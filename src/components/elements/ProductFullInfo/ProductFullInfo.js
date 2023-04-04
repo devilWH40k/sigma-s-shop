@@ -29,7 +29,9 @@ const ProductFullInfo = function ({ product, closeHandler }) {
       <aside
         style={{ backgroundImage: productImageURL }}
         className={classes["ProdFI__img"]}
-      ></aside>
+      >
+        <span className={classes["ProdFI__category"]}>{category}</span>
+      </aside>
       <main className={classes["ProdFI__main-info"]}>
         <h3 className={classes["ProdFI__name"]}>{name}</h3>
         <RatingStars style={{ marginTop: "10px" }} amount={rating} />
