@@ -1,15 +1,25 @@
 import Button from "@/components/elements/Button/Button";
 import OrderForm from "./OrderForm/OrderForm";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
 import { reformateCartList } from "@/utils/helpers/productCartHelper";
+import { emptyCart } from "@/store/slices/cartSlice";
+import Loader from "@/components/elements/Loader/Loader";
 
 const OrderDetails = function () {
+  const router = useRouter();
   const cartList = useSelector((state) => state.cart.cartList);
+  const dispatch = useDispatch();
   const [showForm, setShowForm] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  if (loading) return <Loader />;
+
   const isCartEmpty = cartList.length === 0;
   const displayOrNot =
     showForm || cartList.length === 0 ? { display: "none" } : null;
+
   const btnStyles = {
     margin: "80px auto 0",
     padding: "20px 40px",
@@ -22,6 +32,7 @@ const OrderDetails = function () {
 
   const submitFormHandler = function (e) {
     e.preventDefault();
+    setLoading(true);
     const formEl = e.target;
     const formDataObj = new FormData(formEl);
 
@@ -48,11 +59,13 @@ const OrderDetails = function () {
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
-    });
-    // handle error and redirecting to /cart/finished route
-    //   .then((response) => response.json())
-    //   .then((message) => console.log(message))
-    //   .catch((error) => console.error(error));
+    })
+      .then(() => {
+        dispatch(emptyCart());
+        router.push("/cart/finished");
+      })
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
   };
 
   return (
