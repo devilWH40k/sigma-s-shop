@@ -120,6 +120,7 @@
 }
 
 .burger {
+  position: relative;
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -148,6 +149,17 @@
   &__lines::after {
     content: "";
     margin-top: 9px;
+  }
+
+  &__cart-info {
+    @include mixins.grid-centering;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    top: 4px;
+    right: -11px;
+    color: colors.$color-white;
   }
 
   .burger-toggle:checked + & &__lines::before {
@@ -180,5 +192,9 @@
   .burger-toggle:checked ~ .Header__nav-list > .Header__right-section--mobile {
     display: flex;
     height: 66px;
+  }
+
+  .burger-toggle:checked ~ .burger > .burger__cart-info {
+    display: none;
   }
 }

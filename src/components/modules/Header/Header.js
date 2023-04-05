@@ -30,7 +30,7 @@ const Header = function () {
   return (
     <header ref={headerRef} className={classes["Header"]}>
       <Logo />
-      <Burger />
+      <Burger totalQuantity={totalQuantity} />
       <NavList totalQuantity={totalQuantity} />
       <RightSection totalQuantity={totalQuantity} />
     </header>
