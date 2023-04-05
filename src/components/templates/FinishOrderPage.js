@@ -16,6 +16,8 @@ const FinishOrderPage = function () {
         src={bannerImg}
         width="100%"
         height={450}
+        alt="banner"
+        priority
       />
     </main>
   );
