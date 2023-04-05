@@ -1,6 +1,6 @@
-import Button from "../Button/Button";
-import PricingBlock from "../PricingBlock/PricingBlock";
-import RatingStars from "../RatingStarts/RatingStarts";
+import Button from "../../../../../../elements/Button/Button";
+import PricingBlock from "../../../../../../elements/PricingBlock/PricingBlock";
+import RatingStars from "../../../../../../elements/RatingStarts/RatingStarts";
 import classes from "./ProductFullInfo.module.scss";
 import getConfig from "next/config";
 

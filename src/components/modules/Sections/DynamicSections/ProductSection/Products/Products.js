@@ -1,7 +1,7 @@
 import classes from "./Products.module.scss";
 import Button from "@/components/elements/Button/Button";
 import ProductCard from "@/components/elements/ProductCard/ProductCard";
-import ProductFullInfo from "@/components/elements/ProductFullInfo/ProductFullInfo";
+import ProductFullInfo from "@/components/modules/Sections/DynamicSections/ProductSection/Products/ProductFullInfo/ProductFullInfo";
 import ModalWindow from "@/components/modules/ModalWindow/ModalWindow";
 import { useEffect, useState } from "react";
 
