@@ -64,7 +64,6 @@ const OrderDetails = function () {
         dispatch(emptyCart());
         router.push("/cart/finished");
       })
-      .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   };
 

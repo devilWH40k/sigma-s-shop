@@ -73,8 +73,8 @@ const ProductFullInfo = function ({ product, closeHandler }) {
         btnTitles={["Product Description", "Additional Info"]}
       >
         <span>
-          A refrigerator is the best place to store pistachios if you don't plan
-          to eat them all right away. Package them in an airtight container
+          A refrigerator is the best place to store pistachios if you don&apos;t
+          plan to eat them all right away. Package them in an airtight container
           (Ziplock, Tupperware, jar with tight lid) and they will stay fresh for
           up to a year. An airtight package helps prevent condensation, which
           would make them lose their crunch.
