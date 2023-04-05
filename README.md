@@ -6,6 +6,7 @@ It is a simple web site for shoping(imitation) organick food made for learning p
 
 - [Next.js][next] - main fullstack framework
 - [React.js][react] - as a component builder
+- [Sass][sass] - css preproccesor
 - [Redux/toolkit][redux] - as a state container for app
 - [Redux Persist][redux_persist] - to synchronize redux store with local storage
 - [MongoDB (Mongoose as ODM)][mongo] - database for products and orders
