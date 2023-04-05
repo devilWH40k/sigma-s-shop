@@ -1,38 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Organick
 
-## Getting Started
+It is a simple web site for shoping(imitation) organick food made for learning purposes.
 
-First, run the development server:
+## Used technologies
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+- [Next.js][next] - main fullstack framework
+- [React.js][react] - as a component builder
+- [Redux/toolkit][redux] - as a state container for app
+- [Redux Persist][redux_persist] - to synchronize redux store with local storage
+- [MongoDB (Mongoose as ODM)][mongo] - database for products and orders
+
+## System requirments
+
+- [Node.js][node] 14.6.0 or newer
+- MacOS, Windows (including WSL), and Linux are supported
+- [MongoDB][mongo_installation] should be installed in your local machine
+
+## Starting a dev server
+
+1. Clone the repository and enter the project folder:
+
+```sh
+$ cd sigma-s-shop
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Create **.env.local\_** file in here with:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```sh
+MONGODB_URI = <your mongo db uri> or "mongodb://localhost:27017"
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+3. Install all the requirements:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```sh
+$ npm i
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. Run the following script to fill the db:
 
-## Learn More
+```sh
+$ node .\src\mongo\utils\formDB.js
+```
 
-To learn more about Next.js, take a look at the following resources:
+**Note:** If you've done everything corectly you should see the message: "Added 16 products to the database"
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Start the development server (It will be available at http://localhost:3000):
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```sh
+$ npm run dev
+```
 
-## Deploy on Vercel
+6. Have fun xD
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[next]: https://nextjs.org/docs
+[react]: https://react.dev/learn
+[redux]: https://redux.js.org/introduction/getting-started
+[redux_persist]: https://github.com/rt2zz/redux-persist
+[sass]: https://sass-lang.com
+[node]: https://nodejs.org/uk
+[mongo]: https://www.mongodb.com
+[mongo_installation]: https://www.mongodb.com/docs/manual/installation/
