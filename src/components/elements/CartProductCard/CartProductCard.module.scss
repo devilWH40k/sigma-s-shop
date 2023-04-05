@@ -9,6 +9,7 @@
   &__main {
     @include mixins.flex-with-gap(20px);
     align-items: center;
+    flex-wrap: wrap;
   }
 
   &__aside {
@@ -41,5 +42,12 @@
     background-size: contain;
     background-position: center center;
     background-blend-mode: multiply;
+  }
+}
+
+@media screen and (max-width: 1190px) {
+  .CartProductCard {
+    flex-direction: column;
+    gap: 35px;
   }
 }

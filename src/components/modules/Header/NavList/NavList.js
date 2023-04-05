@@ -10,13 +10,17 @@ const NavList = function ({ totalQuantity }) {
           <Link href="/">Home</Link>
         </li>
         <li className={classes["Header__nav-item"]}>
-          <a href="#">About</a>
+          <Link href="/#about" scroll={false}>
+            About
+          </Link>
         </li>
         <li className={classes["Header__nav-item"]}>
           <a href="#">Pages</a>
         </li>
         <li className={classes["Header__nav-item"]}>
-          <a href="#">Shop</a>
+          <Link href="/#shop" scroll={false}>
+            Shop
+          </Link>
         </li>
         <li className={classes["Header__nav-item"]}>
           <a href="#">Project</a>

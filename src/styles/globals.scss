@@ -48,3 +48,15 @@ h5 {
 h6 {
   font-size: 1.563rem;
 }
+
+@media screen and (max-width: 1439px) {
+  :root {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  :root {
+    font-size: 14px;
+  }
+}

@@ -9,3 +9,12 @@
     margin-right: 5.5%;
   }
 }
+
+@media screen and (max-width: 1190px) {
+  .CartProducts {
+    &__cart-pricing {
+      margin-right: 0;
+      align-self: center;
+    }
+  }
+}

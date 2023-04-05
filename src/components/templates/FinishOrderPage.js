@@ -12,7 +12,7 @@ const FinishOrderPage = function () {
         Thanks for your order
       </Heading>
       <Image
-        style={{ marginBottom: "240px" }}
+        style={{ marginBottom: "240px", width: "100%", height: "auto" }}
         src={bannerImg}
         width="100%"
         height={450}

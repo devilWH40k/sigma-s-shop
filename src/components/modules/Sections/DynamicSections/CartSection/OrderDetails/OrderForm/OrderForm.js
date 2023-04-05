@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import classes from "./OrderForm.module.scss";
 import Button from "@/components/elements/Button/Button";
 

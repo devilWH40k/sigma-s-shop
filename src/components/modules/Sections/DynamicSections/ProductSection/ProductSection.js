@@ -4,7 +4,10 @@ import Heading from "@/components/elements/Heading/Heading";
 
 const ProductSection = function () {
   return (
-    <section className={`${classes["section"]} ${classes["section--product"]}`}>
+    <section
+      id="shop"
+      className={`${classes["section"]} ${classes["section--product"]}`}
+    >
       <span
         className={`${classes["section__preheading"]} ${classes["section__preheading--default"]}`}
       >

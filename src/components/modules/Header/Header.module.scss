@@ -24,6 +24,14 @@
     font-weight: base.$font-weight-bold;
   }
 
+  &__nav-item {
+    transition: color 0.6s;
+
+    &:hover {
+      color: colors.$color-lime;
+    }
+  }
+
   &__right-section {
     @include mixins.flex-with-gap(18px);
     height: 100%;

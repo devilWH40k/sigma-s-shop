@@ -11,6 +11,7 @@
   &__main {
     @include mixins.flex-with-gap(50px);
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   &__section {
@@ -65,5 +66,30 @@
     padding: 15px 0;
     text-align: center;
     border-top: 1px solid colors.$color-grey;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .Footer {
+    padding-left: 30px;
+    padding-right: 30px;
+
+    &__section {
+      &:nth-of-type(2) {
+        order: 1;
+      }
+    }
+
+    &__separator:not(:first-of-type) {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 527px) {
+  .Footer {
+    &__separator:first-of-type {
+      display: none;
+    }
   }
 }

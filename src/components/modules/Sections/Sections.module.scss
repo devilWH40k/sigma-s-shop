@@ -34,12 +34,23 @@
     .wrapper {
       max-width: 480px;
     }
+
+    @media screen and (max-width: 1700px) {
+      .wrapper {
+        background: #ffffffc9;
+        border-radius: 30px;
+        padding: 19px;
+        backdrop-filter: blur(3px);
+      }
+    }
   }
 
   &--offers {
-    display: flex;
-    justify-content: space-between;
-    padding: 150px 12%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, min(95%, 680px));
+    justify-content: center;
+    gap: 35px;
+    padding: 150px 0;
   }
 
   &--about {
@@ -59,18 +70,51 @@
         margin-top: 15px;
       }
     }
+
+    @media screen and (max-width: 1700px) {
+      .wrapper {
+        background: #ffffffe3;
+        border-radius: 30px;
+        padding: 30px;
+        backdrop-filter: blur(4px);
+      }
+    }
   }
 
   &--product {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 200px min(10%, 260px);
+    padding: 200px 100px;
   }
 
   &--cart {
     padding: 100px 10%;
     background-color: colors.$color-sandy;
     margin: 120px 0;
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  .section {
+    &--herro-banner {
+      padding: 180px 0 180px 12%;
+    }
+
+    &--about {
+      justify-content: center;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .section {
+    &--herro-banner {
+      padding-left: 0;
+      display: flex;
+      justify-content: center;
+    }
   }
 }

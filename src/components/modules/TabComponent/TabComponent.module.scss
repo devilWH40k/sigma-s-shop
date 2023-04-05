@@ -6,7 +6,6 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 90px;
 
   &__btns {
     @include mixins.flex-with-gap(20px);

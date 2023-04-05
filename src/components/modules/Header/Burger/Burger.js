@@ -2,8 +2,13 @@ import classes from "../Header.module.scss";
 import { getCartSpanStyle } from "@/utils/helpers/productCartHelper";
 
 const Burger = function ({ totalQuantity }) {
-  const { color } = getCartSpanStyle(totalQuantity);
-  const spanStyle = { backgroundColor: color };
+  let spanStyle;
+  if (totalQuantity) {
+    const { color } = getCartSpanStyle(totalQuantity);
+    spanStyle = { backgroundColor: color };
+  } else {
+    spanStyle = { display: "none" };
+  }
 
   return (
     <>

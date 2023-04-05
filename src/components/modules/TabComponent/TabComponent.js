@@ -2,7 +2,12 @@ import Button from "@/components/elements/Button/Button";
 import React, { useState } from "react";
 import classes from "./TabComponent.module.scss";
 
-const TabComponent = function ({ btnTitles, children }) {
+const TabComponent = function ({
+  btnTitles,
+  children,
+  className,
+  ...otherProps
+}) {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
 
   const tabClickHandler = function (activeTabIndex) {
@@ -10,7 +15,7 @@ const TabComponent = function ({ btnTitles, children }) {
   };
 
   return (
-    <div className={classes["TabComponent"]}>
+    <div className={`${classes["TabComponent"]} ${className}`} {...otherProps}>
       <div className={classes["TabComponent__btns"]}>
         {btnTitles.map((title, index) => (
           <Button

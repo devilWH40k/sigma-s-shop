@@ -42,3 +42,9 @@
     opacity: 0.5;
   }
 }
+
+@media screen and (max-width: 1439px) {
+  .Button {
+    padding: 20px 30px;
+  }
+}

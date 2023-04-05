@@ -11,6 +11,7 @@ const OfferCard = function ({ children, whiteText, bgImage, ...otherProps }) {
         background: bgImageProperty,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
       className={cardClasses.join(" ")}
       {...otherProps}

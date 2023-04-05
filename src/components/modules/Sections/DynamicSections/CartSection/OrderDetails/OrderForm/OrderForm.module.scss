@@ -7,7 +7,7 @@
 
   &__main {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px 50px;
   }
 
@@ -37,6 +37,23 @@
 
     &.invalid {
       border: 1px solid #f03e3e;
+    }
+  }
+}
+
+@media screen and (max-width: 1190px) {
+  .OrderForm {
+    padding-left: 0;
+    padding-right: 0;
+
+    &__main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__input-wrapper {
+      width: 100%;
     }
   }
 }
