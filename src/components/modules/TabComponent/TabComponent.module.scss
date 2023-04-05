@@ -1,0 +1,26 @@
+@use "../../../styles/mixins";
+@use "../../../styles/base";
+
+.TabComponent {
+  @include mixins.flex-with-gap(28px);
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 90px;
+
+  &__btns {
+    @include mixins.flex-with-gap(20px);
+    flex-wrap: wrap;
+  }
+
+  &__text {
+    display: none;
+    text-align: center;
+    font-size: base.$font-size-text-medium;
+    max-width: 1100px;
+
+    &.active {
+      display: inline-block;
+    }
+  }
+}

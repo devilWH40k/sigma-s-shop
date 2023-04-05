@@ -4,19 +4,18 @@ import arrowSvg from "@assets/Button/arrow.svg";
 import { forwardRef } from "react";
 
 const Button = forwardRef(
-  ({ children, type, withArrow, ...otherProps }, ref) => {
+  ({ children, type, withArrow, active, ...otherProps }, ref) => {
     {
       const TYPES = {
         yellow: classes["Button--yellow"],
         "dark-blue": classes["Button--dark-blue"],
       };
 
+      const btnClasses = [classes["Button"], TYPES[type]];
+      if (active) btnClasses.push(classes["active"]);
+
       return (
-        <button
-          ref={ref}
-          className={`${classes["Button"]} ${TYPES[type]}`}
-          {...otherProps}
-        >
+        <button ref={ref} className={btnClasses.join(" ")} {...otherProps}>
           {children}
           {withArrow ? (
             <Image

@@ -7,6 +7,7 @@ import getConfig from "next/config";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/store/slices/cartSlice";
 import { useRef } from "react";
+import TabComponent from "@/components/modules/TabComponent/TabComponent";
 
 const ProductFullInfo = function ({ product, closeHandler }) {
   const quantityRef = useRef(null);
@@ -67,6 +68,23 @@ const ProductFullInfo = function ({ product, closeHandler }) {
           </Button>
         </footer>
       </main>
+      <TabComponent btnTitles={["Product Description", "Additional Info"]}>
+        <span>
+          Welcome to the world of natural and organic. Here you can discover the
+          bounty of nature. We have grown on the principles of health, ecology,
+          and care. We aim to give our customers a healthy chemical-free meal
+          for perfect nutrition. It offers about 8–10% carbs. Simple sugars —
+          such as glucose and fructose — make up 70% and 80% of the carbs in
+          raw.
+        </span>
+        <span>
+          A refrigerator is the best place to store pistachios if you don't plan
+          to eat them all right away. Package them in an airtight container
+          (Ziplock, Tupperware, jar with tight lid) and they will stay fresh for
+          up to a year. An airtight package helps prevent condensation, which
+          would make them lose their crunch.
+        </span>
+      </TabComponent>
     </div>
   );
 };
